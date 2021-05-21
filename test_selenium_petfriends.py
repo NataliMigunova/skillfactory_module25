@@ -5,6 +5,7 @@ from selenium import webdriver
 @pytest.fixture(autouse=True)
 def testing():
    pytest.driver = webdriver.Chrome('./chromedriver')
+   pytest.driver.implicitly_wait(5)
    # Переходим на страницу авторизации
    pytest.driver.get('http://petfriends1.herokuapp.com/login')
 
